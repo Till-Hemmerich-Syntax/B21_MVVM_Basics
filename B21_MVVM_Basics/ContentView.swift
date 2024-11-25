@@ -8,12 +8,18 @@
 import SwiftUI
 
 struct ContentView: View {
+    //@StateObject private var createDogViewModel = DogCreationViewModel()
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            TabView{
+                Tab("a", systemImage: "person") {
+                    AntoninosDogCreationView()
+                }
+                Tab("b",systemImage: "person"){
+                    CreateDogView()
+                }
+                
+            }//.environmentObject(createDogViewModel)
         }
         .padding()
     }
